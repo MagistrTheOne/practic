@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twicofy - Music Streaming</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Скрытый аудио элемент для воспроизведения -->
+    <audio id="audio-player" preload="metadata"></audio>
+    
+    <aside>
+        <div class="logo">
+            <h2>Twicofy</h2>
+        </div>
+        <ul>
+            <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#"><i class="fas fa-search"></i> Search</a></li>
+            <li><a href="#"><i class="fas fa-book"></i> Library</a></li>
+            <li class="divider"></li>
+            <li><a href="#"><i class="fas fa-plus-square"></i> Create Playlist</a></li>
+            <li><a href="#"><i class="fas fa-heart"></i> Liked Songs</a></li>
+            <li class="divider"></li>
+            <li><a href="#">EDM</a></li>
+            <li><a href="#">Rock</a></li>
+            <li><a href="#">Prodigy</a></li>
+            <li><a href="#">Depeche Mode</a></li>
+            <li><a href="#">2001-2005</a></li>
+            <li><a href="#">Road</a></li>
+            <li><a href="#">Party</a></li>
+            <li><a href="#">Soundtracks</a></li>
+        </ul>
+    </aside>
+
+    <header>
+        <div class="navigation-buttons">
+            <button class="nav-btn"><i class="fas fa-chevron-left"></i></button>
+            <button class="nav-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="search-container">
+            <input type="search" name="search" id="search" placeholder="What do you want to listen to?">
+        </div>
+        <div class="user-menu">
+            <button class="profile-btn">
+                <div class="profile-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <div class="section-heading">
+                <h2>Home</h2>
+            </div>
+            
+            <div class="album-grid">
+                <div class="album-card">
+                    <img src="/practic/image/playlist/10.jpg" alt="Album cover" class="album-cover">
+                    <div class="play-icon"><i class="fas fa-play"></i></div>
+                    <div class="album-title">Agile</div>
+                    <div class="album-artist">J&K</div>
+                </div>
+                <div class="album-card">
+                    <img src="/practic/image/playlist/1.jpg" alt="Album cover" class="album-cover">
+                    <div class="play-icon"><i class="fas fa-play"></i></div>
+                    <div class="album-title">Lover</div>
+                    <div class="album-artist">Taylor Swift</div>
+                </div>
+                <div class="album-card">
+                    <img src="/practic/image/playlist/2.jpg" alt="Album cover" class="album-cover">
+                    <div class="play-icon"><i class="fas fa-play"></i></div>
+                    <div class="album-title">Say Yes To Heaven</div>
+                    <div class="album-artist">Lana Del Rey</div>
+                </div>
+                <div class="album-card">
+                    <img src="/practic/image/playlist/3.jpg" alt="Album cover" class="album-cover">
+                    <div class="play-icon"><i class="fas fa-play"></i></div>
+                    <div class="album-title">Susperia (Music for the Luca Guadagnino Film)</div>
+                    <div class="album-artist">Thom Yorke</div>
+                </div>
+                <div class="album-card">
+                    <img src="/practic/image/playlist/4.jpg" alt="Album cover" class="album-cover">
+                    <div class="play-icon"><i class="fas fa-play"></i></div>
+                    <div class="album-title">Omnium Gatherum</div>
+                    <div class="album-artist">King Gizzard & The Lizard Wizard</div>
+                </div>
+            </div>
+
+            <div class="section-heading">
+                <h2>Recently played</h2>
+                <a href="#">See all</a>
+            </div>
+            
+            <div class="album-grid">
+                <div class="album-card">
+                    <img src="/practic/image/playlist/5.jpg" alt="Album cover" class="album-cover">
+                    <div class="play-icon"><i class="fas fa-play"></i></div>
+                    <div class="album-title">DAMN.</div>
+                    <div class="album-artist">Kendrick Lamar</div>
+                </div>
+                <div class="album-card">
+                    <img src="/practic/image/playlist/6.jpg" alt="Album cover" class="album-cover">
+                    <div class="play-icon"><i class="fas fa-play"></i></div>
+                    <div class="album-title">Starboy</div>
+                    <div class="album-artist">The Weeknd</div>
+                </div>
+                <div class="album-card">
+                    <img src="/practic/image/playlist/7.jpg" alt="Album cover" class="album-cover">
+                    <div class="play-icon"><i class="fas fa-play"></i></div>
+                    <div class="album-title">In Rainbows</div>
+                    <div class="album-artist">Radiohead</div>
+                </div>
+                <div class="album-card">
+                    <img src="/practic/image/playlist/8.jpg" alt="Album cover" class="album-cover">
+                    <div class="play-icon"><i class="fas fa-play"></i></div>
+                    <div class="album-title">Стены кваоят руки</div>
+                    <div class="album-artist">Макс Корж</div>
+                </div>
+                <div class="album-card">
+                    <img src="/practic/image/playlist/13.jpg" alt="Album cover" class="album-cover">
+                    <div class="play-icon"><i class="fas fa-play"></i></div>
+                    <div class="album-title">The Slow Rush</div>
+                    <div class="album-artist">Tame Impala</div>
+                </div>
+            </div>
+
+            <div class="section-heading">
+                <h2>New music for you</h2>
+                <a href="#">See all</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="now-playing">
+            <img src="/practic/image/playlist/12.jpg" alt="Album cover" class="track-cover">
+            <div class="track-info">
+                <div class="track-name">Easy Way Out</div>
+                <div class="track-artist">Low Roar</div>
+            </div>
+            <button class="like-btn"><i class="far fa-heart"></i></button>
+        </div>
+        
+        <div class="player-controls">
+            <div class="control-buttons">
+                <button class="control-btn"><i class="fas fa-random"></i></button>
+                <button class="control-btn"><i class="fas fa-step-backward"></i></button>
+                <button class="play-btn"><i class="fas fa-play-circle"></i></button>
+                <button class="control-btn"><i class="fas fa-step-forward"></i></button>
+                <button class="control-btn"><i class="fas fa-redo"></i></button>
+            </div>
+            <div class="progress-container">
+                <span class="time">3:06</span>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                    <div class="progress-thumb"></div>
+                </div>
+                <span class="time">4:44</span>
+            </div>
+        </div>
+        
+        <div class="volume-control">
+            <button class="control-btn"><i class="fas fa-list"></i></button>
+            <button class="control-btn volume-icon"><i class="fas fa-volume-up"></i></button>
+            <div class="progress-bar volume">
+                <div class="progress"></div>
+                <div class="progress-thumb"></div>
+            </div>
+            <button class="control-btn"><i class="fas fa-expand"></i></button>
+        </div>
+    </footer>
+</body>
+</html>
