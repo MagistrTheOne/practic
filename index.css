@@ -175,6 +175,22 @@ aside a:hover {
   color: var(--text-primary);
 }
 
+aside a.active {
+  color: var(--text-primary);
+  position: relative;
+}
+
+aside a.active::before {
+  content: '';
+  position: absolute;
+  left: -24px;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background-color: var(--accent);
+  border-radius: 0 2px 2px 0;
+}
+
 aside a i {
   margin-right: 16px;
   font-size: 20px;

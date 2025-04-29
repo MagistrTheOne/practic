@@ -1,20 +1,3 @@
-console.log("Hello World");
-
-//variables
-let name = "Maxon";
-let age = 20;
-let isProgers = true;
-let x = null;
-console.log(name, age, isProgers, x);
-//arrays
-let product = ["mackbook", "ipad", "iphone", "androids"];
-console.log(product);
-
-const salary = 10000;
-const bonus = 2000;
-const total = salary + bonus;
-console.log(total);
-
 document.addEventListener('DOMContentLoaded', () => {
   // Аудио элемент
   const audioPlayer = document.getElementById('audio-player');
@@ -32,12 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Демо MP3 файлы (в реальном приложении здесь был бы API)
   const demoSongs = [
-    { id: 1, title: 'Agile', artist: 'J&K', cover: '/practic/image/playlist/10.jpg', file: '/practic/audio/2.mp3' },
-    { id: 2, title: 'Lover', artist: 'Taylor Swift', cover: '/practic/image/playlist/1.jpg', file: '/practic/audio/3.mp3' },
-    { id: 3, title: 'Say Yes To Heaven', artist: 'Lana Del Rey', cover: '/practic/image/playlist/2.jpg', file: '/practic/audio/4.mp3' },
-    { id: 5, title: 'Omnium Gatherum', artist: 'King Gizzard & The Lizard Wizard', cover: '/practic/image/playlist/4.jpg', file: '/practic/audio/5.mp3' },
-    { id: 7, title: 'Starboy', artist: 'The Weeknd', cover: '/practic/image/playlist/6.jpg', file: '/practic/audio/6.mp3' },
-    { id: 10, title: 'The Slow Rush', artist: 'Tame Impala', cover: '/practic/image/playlist/13.jpg', file: '/practic/audio/7.mp3' }
+    { id: 1, title: 'Agile', artist: 'J&K', cover: './image/playlist/10.jpg', file: './audio/2.mp3' },
+    { id: 2, title: 'Lover', artist: 'Taylor Swift', cover: './image/playlist/1.jpg', file: './audio/3.mp3' },
+    { id: 3, title: 'Say Yes To Heaven', artist: 'Lana Del Rey', cover: './image/playlist/2.jpg', file: './audio/4.mp3' },
+    { id: 4, title: 'Omnium Gatherum', artist: 'King Gizzard & The Lizard Wizard', cover: './image/playlist/4.jpg', file: './audio/5.mp3' },
+    { id: 5, title: 'Starboy', artist: 'The Weeknd', cover: './image/playlist/6.jpg', file: './audio/6.mp3' },
+    { id: 6, title: 'The Slow Rush', artist: 'Tame Impala', cover: './image/playlist/13.jpg', file: './audio/7.mp3' }
   ];
 
   // Индекс текущего трека
@@ -101,12 +84,16 @@ document.addEventListener('DOMContentLoaded', () => {
       if (isPlaying) {
         audioPlayer.pause();
       } else {
-        audioPlayer.play();
+        audioPlayer.play().catch(error => {
+          console.error('Ошибка воспроизведения:', error);
+        });
       }
     } else if (demoSongs.length > 0) {
       // Если трек не выбран, начинаем с первого
       setCurrentTrack(0);
-      audioPlayer.play();
+      audioPlayer.play().catch(error => {
+        console.error('Ошибка воспроизведения:', error);
+      });
     }
   });
 
@@ -134,7 +121,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Переход к следующему треку
     const nextIndex = (currentTrackIndex + 1) % demoSongs.length;
     setCurrentTrack(nextIndex);
-    audioPlayer.play();
+    audioPlayer.play().catch(error => {
+      console.error('Ошибка воспроизведения:', error);
+    });
+  });
+
+  // Обработка ошибок загрузки аудио
+  audioPlayer.addEventListener('error', (e) => {
+    console.error('Ошибка аудио:', e);
+    alert('Ошибка загрузки аудио. Проверьте путь к файлу.');
   });
 
   // Активация карточек альбомов при клике
@@ -148,7 +143,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const trackIndex = foundTrackIndex !== -1 ? foundTrackIndex : index % demoSongs.length;
       
       setCurrentTrack(trackIndex);
-      audioPlayer.play();
+      audioPlayer.play().catch(error => {
+        console.error('Ошибка воспроизведения:', error);
+      });
     });
   });
 
